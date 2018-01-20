@@ -1,9 +1,9 @@
 package controllers
 
 import (
-	"DemoFullStack/L1/GO/db"
-	"DemoFullStack/L1/GO/lib"
-	"DemoFullStack/L1/GO/models"
+	"DemoFullStack/Server/db"
+	"DemoFullStack/Server/lib"
+	"DemoFullStack/Server/models"
 
 	"gopkg.in/mgo.v2/bson"
 

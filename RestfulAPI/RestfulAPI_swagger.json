@@ -1,0 +1,132 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "RestfulAPI",
+    "version": "v0.0.0"
+  },
+  "host": "8080",
+  "schemes": [
+    "localhost"
+  ],
+  "basePath": "/",
+  "paths": {
+    "/ping": {
+      "get": {
+        "summary": "Ping",
+        "description": "测试接口",
+        "operationId": "2f89d570-3b6e-41b8-b8ff-fbefe84cd744",
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/api/category/add": {
+      "post": {
+        "summary": "分类添加 CategoryAdd",
+        "description": "分类添加接口\n\n返回参数：\ncode: 1-成功，非1-错误代码\nmessage: 消息\ndata: 数据",
+        "operationId": "cc260628-de72-47c2-9463-e776e9521a09",
+        "consumes": [
+          "text/plain"
+        ],
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\n  \"title\": \"咖啡/Coffee\"\n}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        }
+      }
+    },
+    "/api/category/remove": {
+      "delete": {
+        "summary": "分类删除 CategoryRemove",
+        "description": "分类列表接口\n\n返回参数：\ncode: 1-成功，非1-错误代码\nmessage: 消息\ndata: 数据",
+        "operationId": "0bef4159-a250-43ac-9354-813be91508c6",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\"id\":\"5a63405951ed8c7da8cae8b0\"}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        }
+      }
+    },
+    "/api/category/edit": {
+      "put": {
+        "summary": "分类修改 CategoryEdit",
+        "description": "分类修改接口\n\n\n返回参数：\ncode: 1-成功，非1-错误代码\nmessage: 消息\ndata: 数据",
+        "operationId": "6d3556e4-cb74-424f-8b33-24b6e53f6ece",
+        "consumes": [
+          "text/plain"
+        ],
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\n  \"id\": \"5a63405951ed8c7da8cae8b0\",\n  \"title\": \"Coffee\",\n  \"is_active\": 1\n}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        }
+      }
+    },
+    "/api/category/list": {
+      "get": {
+        "summary": "分类列表 CategoryList",
+        "description": "分类列表接口\n\n返回参数：\ncode: 1-成功，非1-错误代码\nmessage: 消息\ndata: 数据",
+        "operationId": "8fd9cd54-0142-461d-ad9e-1b4c0378c6a7",
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/api/category/hack": {
+      "get": {
+        "summary": "不存在的API Hack",
+        "description": "分类列表接口\n\n返回参数：\ncode: 1-成功，非1-错误代码\nmessage: 消息\ndata: 数据",
+        "operationId": "e02b76ac-c8b2-43c3-abe4-2739825928d5",
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "parameters": []
+      }
+    }
+  },
+  "tags": []
+}

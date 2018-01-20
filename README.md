@@ -1,7 +1,8 @@
 Lesson 1 reference: https://zhuanlan.zhihu.com/p/33123924
 
 * RestfulAPI: Restful API for Paw
-* GO/\*: Go Server files
+* RestfulAPI_swagger: Restful API for Swagger UI v2.\*
+* Server/\*: Go Server files
 
 Install some libraries first:
 

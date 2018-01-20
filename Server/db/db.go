@@ -1,7 +1,7 @@
 package db
 
 import (
-	"DemoFullStack/L1/GO/lib"
+	"DemoFullStack/Server/lib"
 	"time"
 
 	mgo "gopkg.in/mgo.v2"

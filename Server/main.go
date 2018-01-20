@@ -1,8 +1,8 @@
 package main
 
 import (
-	"DemoFullStack/L1/GO/controllers"
-	"DemoFullStack/L1/GO/lib"
+	"DemoFullStack/Server/controllers"
+	"DemoFullStack/Server/lib"
 	"io"
 	"os"
 	"strings"
