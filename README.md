@@ -1,6 +1,6 @@
-Lesson 1 reference:
+Lesson 1 reference: https://zhuanlan.zhihu.com/p/33123924
 
-* RestfulAPI.paw: Restful API file
+* RestfulAPI: Restful API for Paw
 * GO/\*: Go Server files
 
 Install some libraries first:
