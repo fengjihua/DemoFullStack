@@ -1,5 +1,6 @@
 Lesson 1 reference: https://zhuanlan.zhihu.com/p/33123924
-Lesson 2 reference: https://zhuanlan.zhihu.com/p/33123924
+
+Lesson 2 reference: https://zhuanlan.zhihu.com/p/33249503
 
 Server:
 
@@ -26,8 +27,11 @@ install node.js
 go to the app root ./Client
 
 > npm install -g grunt-cli
+
 > npm install
+
 > bower install
+
 > npm start
 
 > grunt build:dist
