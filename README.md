@@ -37,6 +37,6 @@ go to the app root ./Client
 
 > npm start
 
-> grunt build:dist
-
 to build the 'dist' folder
+
+> grunt build:dist
