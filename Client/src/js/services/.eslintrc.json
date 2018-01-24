@@ -1,0 +1,41 @@
+{
+  "env": {
+    "browser": true
+  },
+  "extends": "standard",
+  "globals": {
+    "angular": true,
+    "app": true
+  },
+  "rules": {
+    "no-alert": "warn",
+    "no-console": "warn",
+    "block-spacing": "error",
+    "brace-style": ["error", "stroustrup", { "allowSingleLine": true }],
+    "array-bracket-spacing": ["error", "always", { "singleValue": false }],
+    "array-element-newline": ["error", { "multiline": true, "minItems": 3 }],
+    "comma-dangle": ["error", "only-multiline"],
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "comma-style": ["error", "last"],
+    "consistent-this": ["error", "that"],
+    "func-call-spacing": ["error", "never"],
+    "function-paren-newline": ["error", "never"],
+    "id-blacklist": ["error", "data", "err", "e", "cb", "callback"],
+    "key-spacing": ["error", { "align": { "beforeColon": true, "afterColon": true, "on": "colon" } }],
+    "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
+    "max-len": ["error", { "code": 100, "ignoreComments": true, "ignoreUrls": true, "ignoreStrings": true, "ignoreTemplateLiterals": true }],
+    "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
+    "no-multiple-empty-lines": ["error", { "max": 2, "maxBOF": 1 }],
+    "no-trailing-spaces": ["error", { "skipBlankLines": true, "ignoreComments": true }],
+    "no-unneeded-ternary": "error",
+    "no-whitespace-before-property": "error",
+    "nonblock-statement-body-position": ["error", "beside"],
+    "object-curly-newline": ["error", { "multiline": true }],
+    "object-curly-spacing": ["error", "always"],
+    "object-property-newline": ["error", { "allowMultiplePropertiesPerLine": true }],
+    "one-var": ["error", { "initialized": "never", "uninitialized": "always" }],
+    "operator-linebreak": ["error", "after", { "overrides": { "?": "before", ":": "before" } }],
+    "padding-line-between-statements": ["error", { "blankLine": "always", "prev": "*", "next": "return" }],
+    "spaced-comment": ["error", "always", { "exceptions": ["-", "+", "*", "/"] }]
+  }
+}

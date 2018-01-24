@@ -1,0 +1,77 @@
+<div class="wrapper-md" ng-controller="TableCtrl">
+  <!-- toaster directive -->
+  <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+  <!-- / toaster directive -->
+  <!-- modal template -->
+  <script type="text/ng-template" id="myModalContent.html">
+    <div ng-include=" 'tpl/modal.html?v='+timestamp "></div>
+  </script>
+  <!-- / modal template -->
+  <!-- form template -->
+  <script type="text/ng-template" id="myFormContent.html">
+    <div ng-include=" 'tpl/form/category.html?v='+timestamp "></div>
+  </script>
+  <!-- / form template -->
+  <div class="panel panel-default" ng-init="module='category'">
+    <div class="panel-heading"><span translate="aside.nav.CATEGORY"></span></div>
+    <div class="panel-body">
+        <button type="button" ng-click="optAddItem()" class="btn btn-sm btn-primary btn-rounded" >
+          <i class="fa fa-plus"></i> <span translate="admin.ADD"></span>
+        </button>
+    </div>
+    <table st-table="rowCollection" st-pipe="loadData" class="table table-striped">
+      <thead>
+      <tr>
+        <th class="col-lg-2"></th>
+        <!-- <th class="col-lg-1"><span translate="admin.ID"></span></th> -->
+        <th class="col-lg-2"><span translate="admin.TITLE"></span></th>
+        <th class="col-lg-1"><span translate="admin.ICON"></span></th>
+        <th class="col-lg-1"><span translate="admin.NEW"></span></th>
+        <th class="col-lg-1"><span translate="admin.HOT"></span></th>
+        <th class="col-lg-1"><span translate="admin.SORT"></span></th>
+      </tr>
+      <tr>
+        <th>
+          <i class="fa fa-refresh btn text-primary pull-left" ng-click="refreshData()"></i>
+        </th>
+        <th colspan="5">
+          <input st-search="'title'" placeholder="标题/Title" class="input-sm form-control" type="search"/>
+        </th>
+      </tr>
+      </thead>
+      <tbody ng-hide="isLoading">
+        <tr ng-repeat="row in rowCollection track by $index">
+          <td>
+              <button ng-click="optRemoveItem(row)" class="btn btn-sm btn-danger btn-rounded">
+                  <i class="fa fa-trash-o"></i> <span translate="admin.DELETE"></span>
+              </button>
+              <button ng-click="optEditItem(row)" class="btn btn-sm btn-info btn-rounded">
+                  <i class="fa fa-edit"></i> <span translate="admin.EDIT"></span>
+              </button>
+          </td>
+          <!-- <td>{{row.id}}</td> -->
+          <td>{{row.title}}</td>
+          <td>
+            <a href="{{ domainUrl }}{{ row.icon_url }}" data-lightbox="lightbox" data-title="{{row.title}}">
+              <i class="fa fa-image fa-button"></i>
+            </a>
+          </td>
+          <td>
+            <i class="fa fa-circle text-success fa-button" ng-show="row.is_new == 1" ng-click="optNewItem(row)"></i>
+            <i class="fa fa-circle-thin fa-button" ng-show="row.is_new != 1" ng-click="optNewItem(row)"></i>
+          </td>
+          <td>
+            <i class="fa fa-circle text-success fa-button" ng-show="row.is_hot == 1" ng-click="optHotItem(row)"></i>
+            <i class="fa fa-circle-thin fa-button" ng-show="row.is_hot != 1" ng-click="optHotItem(row)"></i>
+          </td>
+          <td>{{row.sort_order}}</td>
+        </tr>
+      </tbody>
+      <tbody ng-show="isLoading">
+          <tr>
+            <td colspan="6" class="text-center"><i class="fa fa-spin fa-refresh"></i></td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

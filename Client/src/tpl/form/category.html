@@ -1,0 +1,57 @@
+<div class="bg-light lter b-b wrapper-md">
+  <h2 class="m-n font-thin h2">{{ operation.toUpperCase() }}</h2>
+</div>
+<div class="wrapper-md">
+  <div class="row">
+    <form ng-init="initFormCategory()" name="form" class="form-validation" ng-submit="processForm()">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <span translate="aside.nav.CATEGORY"></span>
+        </div>
+        <div class="panel-body">
+          <!-- <p class="text-muted">Need support? please fill the fields below.</p> -->
+          <div class="form-group">
+              <label><span translate="admin.TITLE"></span></label>
+              <input type="text" class="form-control" placeholder="标题/Title" ng-model="formData.title" required >
+          </div>
+          <div class="form-group">
+            <label><span translate="admin.ICON"></span></label>
+            <input type="text" class="form-control" placeholder="Upload image" ng-model="formData.icon_url" ng-init="formData.icon_url = formDataNeedInit ? 'default.png ' : formData.icon_url" ng-hide="true">
+            <input ui-jq="filestyle" ui-options="{icon: true, buttonText: '', buttonName: 'btn-primary'}" type="file" nv-file-select uploader="uploader">
+            <!-- <div class="progress bg-light dker">
+                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
+            </div> -->
+            <progressbar value="uploader.progress" ng-show="uploader.progress > 0 && uploader.progress < 100" class="progress-xs" type="success"></progressbar>
+          </div>
+
+          <!-- <div class="line line-dashed b-b line-lg"></div> -->
+          <div class="form-group">
+            <div class="col-sm-2 my-control-label">
+              <span translate="admin.NEW"></span>
+            </div>
+            <div class="col-sm-4">
+              <label class="i-switch bg-info m-t-xs m-r">
+                <input type="checkbox" ng-model="formData.is_new" ng-true-value="1" ng-false-value="0" ng-init="formData.is_new = formDataNeedInit ? 0 : formData.is_new">
+                <i></i>
+              </label>
+            </div>
+            <div class="col-sm-2 my-control-label">
+              <span translate="admin.HOT"></span>
+            </div>
+            <div class="col-sm-4">
+              <label class="i-switch bg-danger m-t-xs m-r">
+                <input type="checkbox" ng-model="formData.is_hot" ng-true-value="1" ng-false-value="0" ng-init="formData.is_hot = formDataNeedInit ? 0 : formData.is_hot">
+                <i></i>
+              </label>
+            </div>
+          </div>
+        </div>
+        <footer class="panel-footer text-right bg-light lter">
+          <button type="submit" class="btn btn-success" ng-disabled="form.$invalid">
+            <span translate="admin.SUBMIT"></span>
+          </button>
+        </footer>
+      </div>
+    </form>
+  </div>
+</div>
